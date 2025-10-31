@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hindsight Zelda Protocall — Leaks</title>
+  <style>
+    :root{
+      --bg:#0b0f14; --muted:#98a0ad; --accent:#e85a4f; --glass:rgba(255,255,255,0.04);
+      --card:#0f1720; --glass-2: rgba(255,255,255,0.02);
+      --mono: 'Courier New',monospace;
+      color-scheme: dark;
+    }
+    html,body{height:100%; margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+    body{background:
+      radial-gradient(1200px 600px at 10% 10%, rgba(232,90,79,0.06), transparent 8%),
+      linear-gradient(180deg,#071018 0%, #071018 40%, #05060a 100%);
+      color:#e6eef6; -webkit-font-smoothing:antialiased; padding-bottom:60px;}
+    header{Display:flex;align-items:center;justify-content:space-between;padding:28px 36px;}
+    .brand{display:flex;gap:16px;align-items:center;}
+    .logo{
+      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#111827,#0b1220);
+      display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,0.6);
+    }
+    .logo .mark{font-weight:700;font-family:var(--mono);font-size:18px;color:var(--accent)}
+    h1.site{font-size:18px;margin:0}
+    nav a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600}
+    nav a:hover{color:#fff}
+    .leak-stamp{
+      background:linear-gradient(90deg,#ffb4b0,#ff6b66);
+      color:#2b0200;padding:6px 12px;border-radius:6px;font-weight:800;font-family:var(--mono);
+      transform:rotate(-12deg);box-shadow:0 6px 18px rgba(232,90,79,0.12);
+    }
+
+    .container{max-width:1100px;margin:18px auto;padding:0 20px;display:grid;grid-template-columns:1fr 360px;gap:20px;}
+    .hero{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:14px;padding:28px;box-shadow: 0 8px 30px rgba(3,6,12,0.6);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .hero h2{margin:0;font-size:28px}
+    .hero p{color:var(--muted);margin-top:12px;line-height:1.45}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#12090a;font-weight:700;text-decoration:none;margin-top:14px}
+    .sidebar{position:sticky;top:28px}
+    .card{background:var(--card);padding:14px;border-radius:12px;border:1px solid var(--glass-2);margin-bottom:14px}
+    .muted{color:var(--muted);font-size:13px}
+
+    .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px}
+    .event{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px dashed rgba(255,255,255,0.02)}
+    .event .title{font-weight:700}
+    .event .meta{font-size:12px;color:var(--muted);margin-top:6px}
+
+    .dossiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:18px}
+    .dossier .role{font-size:12px;color:var(--muted);margin-bottom:8px}
+    .redacted{
+      background:linear-gradient(90deg,#0b1320,#071018);padding:12px;border-radius:8px;position:relative;overflow:hidden;
+      min-height:72px;
+    }
+    .redacted p{margin:0;line-height:1.4}
+    .bar{height:18px;border-radius:4px;background:#021018;margin-top:8px;position:relative}
+    .bar:before{content:"REDACTED";position:absolute;left:10px;top:1px;font-family:var(--mono);font-size:11px;color:#7e8b94}
+    .evidence{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+    .chip{background:var(--glass);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+    footer{max-width:1100px;margin:26px auto;color:var(--muted);padding:18px 20px;text-align:center;font-size:13px}
+    .disclaimer{background:#071018;border-left:4px solid var(--accent);padding:12px;border-radius:8px;margin-top:12px;color:var(--muted)}
+
+    /* small */
+    @media(max-width:900px){.container{grid-template-columns:1fr;}.sidebar{position:static}}
+    pre.doc{background:#02050a;border-radius:8px;padding:12px;font-family:var(--mono);font-size:13px;color:#cfe5ff;overflow:auto;max-height:220px}
+    .search{display:flex;gap:8px}
+    .search input{flex:1;padding:8px;border-radius:10px;border:1px solid #0b1220;background:transparent;color:#fff}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><div class="mark">HZP</div></div>
+      <div>
+        <h1 class="site">Hindsight Zelda Protocall — Independent Leak Archive</h1>
+        <div class="muted">A curated repository for the unfolding leak. <span class="leak-stamp">LEAK • 2025</span></div>
+      </div>
+    </div>
+    <nav aria-label="primary">
+      <a href="#timeline">Timeline</a>
+      <a href="#dossiers">Dossiers</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#press">Press</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero card" id="home">
+      <h2>Hindsight Zelda Protocall</h2>
+      <p>
+        A secret program — code-named <strong>Hindsight Zelda Protocall</strong> — is beginning to leak.
+        This site collects redacted dossiers, corroborating artifacts, and an evolving timeline assembled from document fragments, whistle accounts, and media traces.
+      </p>
+      <a class="btn" href="#timeline">Browse Timeline</a>
+
+      <div class="disclaimer" role="note" aria-live="polite">
+        <strong>FICTION NOTICE — IMPORTANT:</strong> This website is a fictional narrative and creative exercise. The characters and events presented here are fictional composites and not meant to represent real living persons. Any resemblance to real persons is unintentional.
+      </div>
+
+      <h3 style="margin-top:22px">Latest Leak Highlights</h3>
+      <div class="timeline" style="margin-top:8px">
+        <div class="event">
+          <div class="title">Classified Briefing Image — Fragment</div>
+          <div class="meta">Filed: Oct 27, 2025 · source: anonymous drop</div>
+          <div class="muted" style="margin-top:8px">A single-page screenshot with partial header: "HINDSIGHT — LEVEL 5"</div>
+        </div>
+        <div class="event">
+          <div class="title">Internal Memo — Redaction Map</div>
+          <div class="meta">Filed: Oct 24, 2025 · source: whistle thread</div>
+          <div class="muted" style="margin-top:8px">Shows chain-of-command nodes labeled with codenames.</div>
+        </div>
+        <div class="event">
+          <div class="title">Audio Clip — Short Excerpt</div>
+          <div class="meta">Filed: Oct 20, 2025 · source: verified excerpt</div>
+          <div class="muted" style="margin-top:8px">Low-quality recording of off-the-record meeting. Speaker identities redacted.</div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:18px">Quick search</h3>
+      <div class="search" style="margin-top:8px">
+        <input placeholder="Search timeline, dossier, evidence..." id="searchInput" />
+        <button class="btn" onclick="alert('Search simulated in this demo')">Search</button>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <div class="card">
+        <h4>Archive Status</h4>
+        <div class="muted">Updates: <strong>live</strong> · Items collected: <strong>124</strong></div>
+        <div style="margin-top:10px">
+          <div class="muted">Tags</div>
+          <div style="margin-top:8px" class="evidence">
+            <span class="chip">#redacted</span><span class="chip">#timeline</span><span class="chip">#dossier</span><span class="chip">#audio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>How this archive works</h4>
+        <div class="muted">We collect fragments, cross-check metadata, and present side-by-side redacted originals and transcriptions. Contributors remain anonymous.</div>
+      </div>
+
+      <div class="card">
+        <h4>Press contact</h4>
+        <div class="muted">press@hzp-archive.fiction</div>
+      </div>
+    </aside>
+
+    <!-- right column content fallback for small screens: none; main content continues below -->
+  </main>
+
+  <section style="max-width:1100px;margin:18px auto;padding:0 20px;">
+    <div class="card" id="timeline">
+      <h3>Timeline — Selected Entries</h3>
+      <div class="muted" style="margin-top:6px">A condensed sequence synthesized from leaked fragments.</div>
+
+      <div style="margin-top:12px" class="timeline">
+        <div class="event">
+          <div class="title">2020-09-12 — Initial Classification</div>
+          <div class="meta">Document: Operation Charter · level: Restricted</div>
+          <div class="muted" style="margin-top:8px">Charter defines "data recall" objectives and permitted authorities. High-level nodes labeled with codenames.</div>
+        </div>
+
+        <div class="event">
+          <div class="title">2022-07-03 — Tech Integration Phase</div>
+          <div class="meta">Internal memo: "Phase II — External interfaces"</div>
+          <div class="muted" style="margin-top:8px">References to vendor-labeled "Cassium Systems" and "adaptive dataset pods" (redacted).</div>
+        </div>
+
+        <div class="event">
+          <div class="title">2024-11-11 — Black-Box Audit</div>
+          <div class="meta">Audit report excerpt</div>
+          <div class="muted" style="margin-top:8px">Auditor highlights opaque decision rails and an offsite control node.</div>
+        </div>
+
+        <div class="event">
+          <div class="title">2025-10-19 — Public Signal Anomaly</div>
+          <div class="meta">Crowd-sourced detection</div>
+          <div class="muted" style="margin-top:8px">Citizen researchers spot correlation between unusual backbone traffic and localized outages.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="dossiers" style="margin-top:18px">
+      <h3>Dossiers — Key Actors (Fictional)</h3>
+      <div class="muted">All names below are fictional composites used for narrative clarity.</div>
+
+      <div class="dossiers" style="margin-top:12px">
+        <div class="dossier card">
+          <div class="role">Program Director — <strong>Arden Vale</strong></div>
+          <div class="redacted">
+            <p><strong>Profile:</strong> Long-time program manager with background in strategic systems. Referred to in logs as "Director A".</p>
+            <div class="bar"></div>
+            <div style="margin-top:8px" class="muted">Status: Active · Access level: TOP-SECRET</div>
+          </div>
+        </div>
+
+        <div class="dossier card">
+          <div class="role">Industry Liaison — <strong>Cassium (company)</strong></div>
+          <div class="redacted">
+            <p><strong>Profile:</strong> Large private contractor providing adaptive analytics and storage solutions. Multiple invoices appear in procurement logs.</p>
+            <div class="bar"></div>
+            <div style="margin-top:8px" class="muted">Status: Listed as Vendor · Contracts redacted</div>
+          </div>
+        </div>
+
+        <div class="dossier card">
+          <div class="role">Policy Oversight — <strong>Senator Rowan</strong></div>
+          <div class="redacted">
+            <p><strong>Profile:</strong> Member of the oversight committee; composed memos show limited briefings but with several "need-to-know" blocks.</p>
+            <div class="bar"></div>
+            <div style="margin-top:8px" class="muted">Status: Mentioned in briefings · identity partially redacted</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="evidence" style="margin-top:18px">
+      <h3>Evidence Locker</h3>
+      <div class="muted">Select leaked artifacts — presented with redactions and transcriptions.</div>
+
+      <div style="margin-top:12px">
+        <h4>Leaked Memo (Excerpt)</h4>
+        <pre class="doc">
+-- HINDSIGHT PROJECT // INTERNAL MEMO --
+Date: 2024-01-14
+To: Director A
+From: Program Integration
+Subject: Phase II — External interfaces
+
+Summary: Implementation of adaptive recall nodes requires vendor keys. Access to segmented datasets must be limited to "cleared handles" only — see annex.
+
+[REDACTED]
+[REDACTED] - "Cassium" integration schedule attached (REFER ANNEX B)
+-- END EXCERPT --
+        </pre>
+      </div>
+
+      <div style="margin-top:12px">
+        <h4>Audio Transcript Excerpt</h4>
+        <pre class="doc">
+[00:00:02] Unknown: "Are we running the node under the contingency?"
+[00:00:04] Unknown: "Affirm — with masking and fallback. Logs to local retention only."
+[00:00:06] Unknown: "[REDACTED]"
+        </pre>
+      </div>
+    </div>
+
+    <div class="card" id="press" style="margin-top:18px">
+      <h3>Press Kit</h3>
+      <p class="muted">Use the materials below for coverage — remember to include the FICTION disclaimer.</p>
+
+      <div style="margin-top:10px">
+        <strong>Suggested headline</strong>
+        <p class="muted">"Leaked fragments suggest opaque program controls — fictional archive explores implications"</p>
+
+        <strong>Summary blurb</strong>
+        <p class="muted">Hindsight Zelda Protocall (fictional) compiles a staged leak to explore oversight, private sector integration, and the public's right to know.</p>
+
+        <strong>Contact</strong>
+        <p class="muted">press@hzp-archive.fiction</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="muted">Hindsight Zelda Protocall — creative fiction project. This site contains fictional content only.</div>
+    <div class="muted" style="margin-top:8px">If you intend this site for publication, consider adding more explicit legal disclaimers and a clear "About" page explaining the fictional nature.</div>
+  </footer>
+
+  <script>
+    // Minimal interactive touches
+    (function(){
+      const input = document.getElementById('searchInput');
+      if(!input) return;
+      input.addEventListener('keydown', e=>{
+        if(e.key === 'Enter') alert('Search simulated in this demo — try the timeline or dossiers.');
+      });
+    })();
+  </script>
+</body>
+</html>
